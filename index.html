@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Audit 5S</title>
+
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="header">
+
+        <img src="logo.png" class="logo">
+
+        <div class="judul">
+
+            <h1>AUDIT 5S</h1>
+
+            <p>PT SEIKOU SEAT COVER</p>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ================= DATA AUDITOR ================= -->
+
+<div class="card">
+
+<h2>📋 Informasi Audit</h2>
+
+<div class="form-group">
+
+<label>👤 Nama Auditor</label>
+
+<input
+type="text"
+id="nama"
+placeholder="Masukkan Nama Auditor">
+
+</div>
+
+<div class="form-group">
+
+<label>🆔 NIK Kerja</label>
+
+<input
+type="text"
+id="nik"
+placeholder="Masukkan NIK">
+
+</div>
+
+<div class="form-group">
+
+<label>🏭 Area Audit</label>
+
+<input
+type="text"
+id="area"
+placeholder="Masukkan Area">
+
+</div>
+
+<div class="form-group">
+
+<label>👤 Penanggung Jawab Area</label>
+
+<input
+type="text"
+id="pic"
+placeholder="Masukkan Nama PIC">
+
+</div>
+
+<div class="form-group">
+
+<label>📅 Tanggal Audit</label>
+
+<input
+type="date"
+id="tanggal">
+
+</div>
+
+</div>
+
+<!-- ================= KATEGORI ================= -->
+
+<div class="card">
+
+<h2>KATEGORI PENILAIAN</h2>
+
+<div class="legend">
+
+<div class="item merah">
+<span></span>
+1 = Sangat Buruk (>5 Temuan)
+</div>
+
+<div class="item orange">
+<span></span>
+2 = Buruk (3-4 Temuan)
+</div>
+
+<div class="item kuning">
+<span></span>
+3 = Cukup (2 Temuan)
+</div>
+
+<div class="item biru">
+<span></span>
+4 = Baik (1 Temuan)
+</div>
+
+<div class="item hijau">
+<span></span>
+5 = Sangat Baik (0 Temuan)
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= MENU 5S ================= -->
+
+<div class="menu">
+
+<button class="menu5s seiri">
+
+📦 SEIRI (Ringkas)
+
+<span>▼</span>
+
+</button>
+
+<div class="isi" id="isiSeiri">
+
+<p>Nanti berisi checklist Seiri.</p>
+
+</div>
+
+<button class="menu5s seiton">
+
+📍 SEITON (Rapi)
+
+<span>▼</span>
+
+</button>
+
+<div class="isi">
+
+<p>Nanti berisi checklist Seiton.</p>
+
+</div>
+
+<button class="menu5s seiso">
+
+🧹 SEISO (Resik)
+
+<span>▼</span>
+
+</button>
+
+<div class="isi">
+
+<p>Nanti berisi checklist Seiso.</p>
+
+</div>
+
+<button class="menu5s seiketsu">
+
+🛡️ SEIKETSU (Rawat)
+
+<span>▼</span>
+
+</button>
+
+<div class="isi">
+
+<p>Nanti berisi checklist Seiketsu.</p>
+
+</div>
+
+<button class="menu5s shitsuke">
+
+✅ SHITSUKE (Rajin)
+
+<span>▼</span>
+
+</button>
+
+<div class="isi">
+
+<p>Nanti berisi checklist Shitsuke.</p>
+
+</div>
+
+</div>
+
+<!-- ================= HASIL ================= -->
+
+<div class="card">
+
+<div class="hasil">
+
+<div>
+
+<h3>Total Skor</h3>
+
+<h1 id="nilai">0%</h1>
+
+<p id="kategori">-</p>
+
+</div>
+
+<button
+class="btnHitung"
+onclick="hitung()">
+
+HITUNG NILAI
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= FOTO ================= -->
+
+<div class="card">
+
+<h2>📷 Upload Temuan</h2>
+
+<input
+type="file"
+accept="image/*"
+id="foto">
+
+<div id="preview"></div>
+
+</div>
+
+<!-- ================= KIRIM ================= -->
+
+<div class="card">
+
+<button
+class="btnKirim">
+
+KIRIM
+
+</button>
+
+</div>
+
+<footer>
+
+Developed by Roni Maulana © 2026
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
