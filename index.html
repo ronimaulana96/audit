@@ -1,182 +1,217 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audit 5S</title>
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    background:#f0f2f5;
-    margin:0;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.header{
-    background:#1565C0;
-    color:white;
-    padding:20px;
-    text-align:center;
-    font-size:28px;
-    font-weight:bold;
-}
+    <title>Audit 5S</title>
 
-.container{
-    width:400px;
-    background:white;
-    margin:30px auto;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
-}
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-label{
-    font-weight:bold;
-}
-
-input,select{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    margin-bottom:15px;
-    border-radius:5px;
-    border:1px solid #ccc;
-    box-sizing:border-box;
-}
-
-button{
-    width:100%;
-    padding:12px;
-    background:#4CAF50;
-    color:white;
-    font-size:18px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#2E7D32;
-}
-
-#hasil{
-    margin-top:20px;
-    text-align:center;
-    font-size:20px;
-    font-weight:bold;
-}
-</style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
-<div class="header">
-AUDIT 5S
-</div>
+    <!-- ================= HEADER ================= -->
 
-<div class="container">
+    <header class="header">
 
-<label>Nama Auditor</label>
-<input type="text" id="nama" placeholder="Masukkan nama">
+        <div class="logo">
+            🏭
+        </div>
 
-<label>Departemen</label>
-<input type="text" id="dept" placeholder="Masukkan departemen">
+        <div class="title">
 
-<label>Nilai Seiri</label>
-<select id="seiri">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
+            <h1>AUDIT 5S</h1>
 
-<label>Nilai Seiton</label>
-<select id="seiton">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
+            <p>PT SEIKOU SEAT COVER</p>
 
-<label>Nilai Seiso</label>
-<select id="seiso">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
+        </div>
 
-<label>Nilai Seiketsu</label>
-<select id="seiketsu">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
+    </header>
 
-<label>Nilai Shitsuke</label>
-<select id="shitsuke">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
+    <!-- ================= CONTENT ================= -->
 
-<button onclick="hitung()">Hitung Nilai</button>
+    <div class="container">
 
-<div id="hasil"></div>
+        <!-- Data Auditor -->
 
-</div>
+        <div class="card">
 
-<script>
+            <h2>📋 Informasi Audit</h2>
 
-function hitung(){
+            <div class="input-group">
 
-let total =
-Number(document.getElementById("seiri").value)+
-Number(document.getElementById("seiton").value)+
-Number(document.getElementById("seiso").value)+
-Number(document.getElementById("seiketsu").value)+
-Number(document.getElementById("shitsuke").value);
+                <label>Nama Auditor</label>
 
-let persen = (total/25)*100;
+                <input type="text" id="nama" placeholder="Masukkan nama auditor">
 
-let kategori="";
+            </div>
 
-if(persen>=90){
-    kategori="🟢 Sangat Baik";
-}
-else if(persen>=80){
-    kategori="🔵 Baik";
-}
-else if(persen>=60){
-    kategori="🟡 Cukup";
-}
-else if(persen>=40){
-    kategori="🟠 Kurang";
-}
-else{
-    kategori="🔴 Sangat Buruk";
-}
+            <div class="input-group">
 
-document.getElementById("hasil").innerHTML=
-`
-Nama : ${document.getElementById("nama").value}<br>
-Departemen : ${document.getElementById("dept").value}<br><br>
+                <label>Departemen</label>
 
-Total Nilai : <b>${total}</b><br>
-Persentase : <b>${persen.toFixed(0)}%</b><br>
-Kategori : <b>${kategori}</b>
-`;
+                <input type="text" id="departemen" placeholder="Masukkan departemen">
 
-}
+            </div>
 
-</script>
+            <div class="input-group">
+
+                <label>Area Audit</label>
+
+                <input type="text" id="area" placeholder="Masukkan area">
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Tanggal</label>
+
+                <input type="date" id="tanggal">
+
+            </div>
+
+        </div>
+
+        <!-- Penilaian -->
+
+        <div class="card">
+
+            <h2>⭐ Penilaian 5S</h2>
+
+            <div class="score">
+
+                <label>Seiri</label>
+
+                <select id="seiri">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+            </div>
+
+            <div class="score">
+
+                <label>Seiton</label>
+
+                <select id="seiton">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+            </div>
+
+            <div class="score">
+
+                <label>Seiso</label>
+
+                <select id="seiso">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+            </div>
+
+            <div class="score">
+
+                <label>Seiketsu</label>
+
+                <select id="seiketsu">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+            </div>
+
+            <div class="score">
+
+                <label>Shitsuke</label>
+
+                <select id="shitsuke">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <!-- Temuan -->
+
+        <div class="card">
+
+            <h2>📝 Temuan</h2>
+
+            <textarea id="temuan" rows="5" placeholder="Masukkan hasil temuan audit..."></textarea>
+
+        </div>
+
+        <!-- Upload -->
+
+        <div class="card">
+
+            <h2>📷 Bukti Temuan</h2>
+
+            <input type="file" id="foto">
+
+        </div>
+
+        <!-- Tombol -->
+
+        <button class="btn" onclick="hitung()">
+
+            Hitung Nilai
+
+        </button>
+
+        <!-- Hasil -->
+
+        <div class="hasil" id="hasil">
+
+            <h2>Hasil Audit</h2>
+
+            <h1 id="persen">0%</h1>
+
+            <h3 id="kategori">-</h3>
+
+            <p>Total Nilai : <span id="total">0</span></p>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        Developed by Roni Maulana © 2026
+
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
