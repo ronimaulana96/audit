@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit 5S</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f0f2f5;
+    margin:0;
+}
+
+.header{
+    background:#1565C0;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.container{
+    width:400px;
+    background:white;
+    margin:30px auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+label{
+    font-weight:bold;
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#4CAF50;
+    color:white;
+    font-size:18px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2E7D32;
+}
+
+#hasil{
+    margin-top:20px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+AUDIT 5S
+</div>
+
+<div class="container">
+
+<label>Nama Auditor</label>
+<input type="text" id="nama" placeholder="Masukkan nama">
+
+<label>Departemen</label>
+<input type="text" id="dept" placeholder="Masukkan departemen">
+
+<label>Nilai Seiri</label>
+<select id="seiri">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+
+<label>Nilai Seiton</label>
+<select id="seiton">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+
+<label>Nilai Seiso</label>
+<select id="seiso">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+
+<label>Nilai Seiketsu</label>
+<select id="seiketsu">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+
+<label>Nilai Shitsuke</label>
+<select id="shitsuke">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+
+<button onclick="hitung()">Hitung Nilai</button>
+
+<div id="hasil"></div>
+
+</div>
+
+<script>
+
+function hitung(){
+
+let total =
+Number(document.getElementById("seiri").value)+
+Number(document.getElementById("seiton").value)+
+Number(document.getElementById("seiso").value)+
+Number(document.getElementById("seiketsu").value)+
+Number(document.getElementById("shitsuke").value);
+
+let persen = (total/25)*100;
+
+let kategori="";
+
+if(persen>=90){
+    kategori="🟢 Sangat Baik";
+}
+else if(persen>=80){
+    kategori="🔵 Baik";
+}
+else if(persen>=60){
+    kategori="🟡 Cukup";
+}
+else if(persen>=40){
+    kategori="🟠 Kurang";
+}
+else{
+    kategori="🔴 Sangat Buruk";
+}
+
+document.getElementById("hasil").innerHTML=
+`
+Nama : ${document.getElementById("nama").value}<br>
+Departemen : ${document.getElementById("dept").value}<br><br>
+
+Total Nilai : <b>${total}</b><br>
+Persentase : <b>${persen.toFixed(0)}%</b><br>
+Kategori : <b>${kategori}</b>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
